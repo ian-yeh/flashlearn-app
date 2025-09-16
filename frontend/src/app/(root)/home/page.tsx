@@ -1,4 +1,5 @@
 import { auth } from "@/auth"
+import ContentUpload from "@/components/ContentUpload";
 import Sidebar from "@/components/Sidebar";
 
 export default async function Home() {
@@ -12,7 +13,9 @@ export default async function Home() {
         userEmail={session.user.email}
         userImage={session.user.image}
       />
-      <div>MAIN CONTENT</div>
+      <div className="flex-1">
+        <ContentUpload />
+      </div>
     </div>
   )
 }
