@@ -1,36 +1,88 @@
 "use client";
+import ConnectedParticles from "@/components/FloatingParticles";
 import SignInWithGoogle from "@/components/SignInWithGoogle";
-import Link from "next/link"
+import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="h-[100vh]">
-      <div className="w-[50vw] bg-gray-300 py-3 px-6 rounded-full mr-auto ml-auto mt-12 flex items-center justify-between">
-        <div className="flex items-center">
-          <h1 className="text-3xl mr-1">⚡</h1>
-          <h1 className="text-xl">Flashlearn</h1>
+    <div className="min-h-screen bg-[var(--color-bg-primary)]">
+      <ConnectedParticles />
+      {/* Navigation */}
+      <nav className="glass-effect fixed top-0 left-0 right-0 z-50 border-b border-[var(--color-neutral-700)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center space-x-2">
+              <span className="text-2xl">⚡</span>
+              <span className="font-display text-xl font-bold text-[var(--color-text-primary)]">
+                Flashlearn
+              </span>
+            </div>
+            <div className="flex items-center space-x-6">
+              <Link 
+                href="/about" 
+                className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-200 font-medium"
+              >
+                About
+              </Link>
+              <button className="btn-header">
+                Get Started
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="flex gap-4">
-          <Link href={"/about"}>
-            <h1 className="text-xl hover:text-gray-700 transition-colors duration-200">About</h1>
-          </Link>
-        </div>
-      </div>
-      
-      <div className="flex flex-col justify-center items-center p-20">
-        <div className="w-full space-y-24 mt-auto mb-auto">
-          <h1 className="text-6xl md:text-7xl">
-            Turn <span className="font-marker"> chaos </span> into 
-            <span className="font-script text-8xl md:text-9xl bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 bg-clip-text text-transparent"> mastery</span>
-            .
-          </h1>
-          
-          <h1 className="text-6xl md:text-7xl">Use Flashlearn ⚡.</h1>
-          <SignInWithGoogle />
-        </div>
-      </div>
-    </div>
-  )
-}
+      </nav>
 
-export default page
+      {/* Hero Section */}
+      <section className="h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="space-y-8">
+            <div className="text-5xl sm:text-6xl lg:text-8xl font-display font-light leading-tight">
+              <span className="text-[var(--color-text-primary)]">Turn chaos into</span>
+              <br />
+              <span className="text-gradient">mastery</span>
+            </div>
+            
+            <p className="text-xl sm:text-2xl text-[var(--color-text-secondary)] max-w-3xl mx-auto leading-relaxed">
+              AI-powered document analysis and summarization that transforms overwhelming information into actionable insights.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+              <SignInWithGoogle />
+              <button className="btn-secondary">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer 
+      <footer className="bg-[var(--color-bg-primary)] border-[var(--color-neutral-700)] py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              <span className="text-2xl">⚡</span>
+              <span className="font-display text-xl font-bold text-[var(--color-text-primary)]">
+                Flashlearn
+              </span>
+            </div>
+            <div className="flex items-center space-x-6">
+              <Link 
+                href="/about" 
+                className="text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition-colors duration-200"
+              >
+                About
+              </Link>
+              <span className="text-[var(--color-text-muted)]">
+                © 2024 Flashlearn. All rights reserved.
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>}
+      */}
+    </div>
+  );
+};
+
+export default page;
