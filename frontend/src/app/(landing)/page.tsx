@@ -1,12 +1,10 @@
 "use client";
-import ConnectedParticles from "@/components/FloatingParticles";
 import SignInWithGoogle from "@/components/SignInWithGoogle";
 import Link from "next/link";
 
 const page = () => {
   return (
     <div className="min-h-screen bg-[var(--color-bg-primary)]">
-      <ConnectedParticles />
       {/* Navigation */}
       <nav className="glass-effect fixed top-0 left-0 right-0 z-50 border-b border-[var(--color-neutral-700)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

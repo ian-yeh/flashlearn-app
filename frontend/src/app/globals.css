@@ -404,62 +404,6 @@ body {
   }
 }
 
-/* Custom Animations for Floating Particles */
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0px) translateX(0px); 
-  }
-  25% { 
-    transform: translateY(-20px) translateX(10px); 
-  }
-  50% { 
-    transform: translateY(-40px) translateX(-10px); 
-  }
-  75% { 
-    transform: translateY(-20px) translateX(5px); 
-  }
-}
-
-@keyframes floatUp {
-  0% { 
-    transform: translateY(0px) translateX(0px); 
-    opacity: 0.1; 
-  }
-  50% { 
-    opacity: 0.6; 
-  }
-  100% { 
-    transform: translateY(-100vh) translateX(20px); 
-    opacity: 0; 
-  }
-}
-
-@keyframes floatDown {
-  0% { 
-    transform: translateY(-100vh) translateX(0px); 
-    opacity: 0; 
-  }
-  50% { 
-    opacity: 0.6; 
-  }
-  100% { 
-    transform: translateY(100vh) translateX(-20px); 
-    opacity: 0.1; 
-  }
-}
-
-/* Animation Classes */
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-up {
-  animation: floatUp 8s ease-in-out infinite;
-}
-
-.animate-float-down {
-  animation: floatDown 7s ease-in-out infinite;
-}
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
